@@ -2,7 +2,7 @@
 
 <details>
 <summary> Installation and Configuration </summary>
-# Installation
+Installation
   Untuk menginstall laravel 11, minimal versi PHP yang digunakan adalah 8.2
   anda bisa update PHP ke versi terbaru di php.net/download. Selanjutnya pindahkan versi PHP di laragon menjadi yang terbaru.
   Setelah selesai melakukan update, langkah selanjutnya adalah masuk ke terminal, kemudian jalankan perintah berikut untuk membuat prject      laravel baru :
@@ -22,6 +22,15 @@
 Jika berhasil maka akan muncul tampilan seperti dibawah ini, kemudian tekan ctrl+click untuk membuka di browser
 ![Screenshot 2024-06-02 223427](https://github.com/Meilyaatffh/Laravel11/assets/134565192/a1900294-ffe0-4cbe-866f-ae4e21f2677a)
 
-![image](https://github.com/Meilyaatffh/Laravel11/assets/134565192/2e5aa76c-cd4d-43a8-a9f0-529ccc64342b)
+Configuration
 
+
+</details>
+
+<details>
+<summary> Directory Structure and Frontend </summary>
+The Root Directory
+
+
+  
 </details>
