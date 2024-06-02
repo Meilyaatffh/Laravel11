@@ -9,7 +9,8 @@
 
   Untuk menginstall laravel 11, minimal versi PHP yang digunakan adalah 8.2
   anda bisa update PHP ke versi terbaru di php.net/download. Selanjutnya pindahkan versi PHP di laragon menjadi yang terbaru.
-  Setelah selesai melakukan update, langkah selanjutnya adalah masuk ke terminal, kemudian jalankan perintah berikut untuk membuat prject      laravel baru :
+  Setelah selesai melakukan update, langkah selanjutnya adalah masuk ke terminal, kemudian jalankan perintah berikut untuk membuat   
+  project laravel baru :
   ```
   composer create-project laravel/laravel laravel11
   ```
@@ -56,7 +57,103 @@ Jika berhasil maka akan muncul tampilan seperti dibawah ini, kemudian tekan ctrl
 <summary> Routing </summary>
   
 ### Routing
+Routing adalah fitur inti dari framework Laravel yang bertanggung jawab untuk mengelola lalu lintas permintaan (request) dan pengiriman respons (response) di aplikasi web. Setiap kali pengguna mengakses URL tertentu, routing menentukan bagaimana permintaan tersebut ditangani oleh aplikasi. 
+Berikut contoh rute dasar yang sering digunakan dalam aplikasi Laravel :
+```
+Route::get('/', function () {
+    return view('home');
+});
+```
+Rute ini mengarahkan permintaan GET ke URL root (/) ke tampilan home. Jadi, ketika pengguna mengakses http://yourdomain.com/, mereka akan melihat halaman home.blade.php
+
+## Menggunakan Resource Controller
+Laravel menyediakan cara mudah untuk mendefinisikan rute yang sesuai dengan pola CRUD (Create, Read, Update, Delete) melalui resource controller. Resource controller menyederhanakan definisi rute dan menghubungkannya ke metode controller yang sesuai.
+```
+use App\Http\Controllers\MahasiswaController;
+
+Route::resource('mahasiswa', MahasiswaController::class);
+```
+
+</details>
 
 
+<details>
+<summary> Middleware </summary>
+  
+### Middleware
+Middleware adalah fitur penting dalam framework Laravel yang bertindak sebagai lapisan perantara antara permintaan HTTP yang masuk dan respons yang dikirim ke pengguna. Middleware memungkinkan untuk memeriksa dan memfilter permintaan sebelum mencapai controller.
+
+
+</details>
+
+
+<details>
+<summary> Controllers dan Views </summary>
+Controllers dan Views adalah dua komponen penting dalam pola arsitektur MVC (Model-View-Controller) yang digunakan oleh Laravel. Controllers bertanggung jawab untuk menangani logika aplikasi dan berinteraksi dengan model, sedangkan Views bertanggung jawab untuk menampilkan data kepada pengguna.
+  
+### Controllers
+Controllers adalah kelas PHP yang digunakan untuk mengelompokkan logika penanganan permintaan HTTP terkait. Mereka membantu dalam memisahkan logika aplikasi dari logika tampilan.
+Perintah untuk membuat controller :
+```
+php artisan make:controller MahasiswaController --resource
+```
+
+### Views
+Views bertanggung jawab untuk menampilkan data yang diberikan oleh controller. Dalam Laravel, views adalah file Blade yang berada di direktori resources/views.
+
+
+
+</details>
+
+
+<details>
+<summary> Blade Templates </summary>
+  
+### Blade Templates
+
+
+
+</details>
+
+
+<details>
+<summary> Migrations </summary>
+  
+### Migrations
+Konsep Migration pada Laravel adalah sebuah mekanisme yang memudahkan pengelolaan struktur database dalam pengembangan aplikasi.
+Perintah untuk membuat migrations :
+```
+php artisan make:migration create_mahasiswa_table
+```
+Perintah untuk menjalankan migrations :
+```
+php artisan migrate
+```
+
+
+
+</details>
+
+
+<details>
+<summary> Query Builder </summary>
+  
+### Query Builder
+Query Builder adalah fitur dalam Laravel yang memungkinkan Anda untuk membuat kueri SQL menggunakan sintaks PHP. Ini memberikan cara yang lebih intuitif dan terstruktur untuk berinteraksi dengan database Anda.
+
+
+</details>
+
+
+<details>
+<summary> Eloquent ORM </summary>
+  
+### Eloquent ORM
+loquent ORM adalah ORM (Object-Relational Mapping) yang disertakan dengan Laravel. Ini menyediakan cara yang mudah dan intuitif untuk berinteraksi dengan database menggunakan model PHP. Dengan Eloquent, Anda dapat melakukan berbagai operasi database seperti membuat, membaca, memperbarui, dan menghapus data dengan mudah dan efisien. 
+Untuk menggunakan Eloquent ORM, perlu membuat model yang mewakili tabel dalam database. Model-model ini biasanya ditempatkan di dalam direktori app/Models. 
+Untuk membuat model baru, dapat menggunakan perintah Artisan:
+```
+php artisan make:model mahasiswa
+```
 
 </details>
