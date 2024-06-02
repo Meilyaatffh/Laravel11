@@ -1,3 +1,7 @@
 ## Laravel11
 
-# Installation and Configuration
+<details>
+<summary> Installation and Configuration </summary>
+# Installation
+  
+</details>
