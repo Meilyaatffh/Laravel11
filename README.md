@@ -20,5 +20,7 @@
   php artisan serve
   ```
 Jika berhasil maka akan muncul tampilan seperti dibawah ini, kemudian tekan ctrl+click untuk membuka di browser
+![Screenshot 2024-06-02 223427](https://github.com/Meilyaatffh/Laravel11/assets/134565192/a1900294-ffe0-4cbe-866f-ae4e21f2677a)
+
 
 </details>
