@@ -22,5 +22,6 @@
 Jika berhasil maka akan muncul tampilan seperti dibawah ini, kemudian tekan ctrl+click untuk membuka di browser
 ![Screenshot 2024-06-02 223427](https://github.com/Meilyaatffh/Laravel11/assets/134565192/a1900294-ffe0-4cbe-866f-ae4e21f2677a)
 
+![image](https://github.com/Meilyaatffh/Laravel11/assets/134565192/2e5aa76c-cd4d-43a8-a9f0-529ccc64342b)
 
 </details>
