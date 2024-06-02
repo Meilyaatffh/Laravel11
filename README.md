@@ -45,7 +45,7 @@ Jika berhasil maka akan muncul tampilan seperti dibawah ini, kemudian tekan ctrl
 5. The Public Directory : Untuk menyimpan file file yang dapat diakses secara public. Contohnya gambar, javascript, dan css
 6. The Resources Directory : Direktori resources berisi aset mentah yang belum dikompilasi seperti CSS atau JavaScript.
 7. The Routes Directory : Folder dimana menyimpan file file yang bertugas melakukan rute atau penjaluran dari aplikasi kita
-8. The Storage Directory :
+8. The Storage Directory : Direktori ini berisi file-file yang dihasilkan oleh aplikasi, seperti file log, file cache, dan file yang diunggah oleh pengguna.
 9. The Tests Directory : Folder untuk menyimpan file file yang ada hubungannya dengan testing aplikasi kita
 10. The Vendor Directory : Tempat untuk menyimpan package package yang diinstal lewat komposer
 
