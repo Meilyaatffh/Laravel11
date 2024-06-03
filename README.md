@@ -82,7 +82,51 @@ Route::resource('mahasiswa', MahasiswaController::class);
   
 ### Middleware
 Middleware adalah fitur penting dalam framework Laravel yang bertindak sebagai lapisan perantara antara permintaan HTTP yang masuk dan respons yang dikirim ke pengguna. Middleware memungkinkan untuk memeriksa dan memfilter permintaan sebelum mencapai controller.
+Untuk membuat middleware baru, gunakan make:middleware perintahnya :
+```
+php artisan make:middleware EnsureTokenIsValid
+```
+Perintah ini akan menempatkan EnsureTokenIsValid kelas baru di dalam direktori Anda app/Http/Middleware
 
+### Logika dalam Metode Handle:
+```
+if ($request->input('token') !== 'my-secret-token') {
+    return redirect('home');
+}
+
+return $next($request);
+```
+- if ($request->input('token') !== 'my-secret-token'): Memeriksa apakah parameter token dalam permintaan tidak sama dengan nilai 'my-secret-token'.
+- !==: Operator ketidaksamaan yang digunakan untuk memeriksa apakah dua nilai tidak sama.
+- return redirect('home');: Jika token tidak valid, middleware akan mengarahkan (redirect) pengguna ke halaman 'home'.
+- return $next($request);: Jika token valid, middleware akan melanjutkan permintaan ke middleware berikutnya atau ke controller yang menangani permintaan tersebut.
+
+  ```
+  use App\Http\Middleware\EnsureTokenIsValid;
+ 
+->withMiddleware(function (Middleware $middleware) {
+     $middleware->append(EnsureTokenIsValid::class);
+})
+```
+Kode yang Anda berikan menunjukkan bagaimana cara menambahkan middleware EnsureTokenIsValid ke dalam aplikasi Laravel menggunakan metode withMiddleware
+penjelasan kode
+
+Impor Kelas Middleware
+```
+use App\Http\Middleware\EnsureTokenIsValid;
+```
+- Mengimpor kelas EnsureTokenIsValid yang didefinisikan di namespace App\Http\Middleware.
+
+Metode withMiddleware:
+```
+->withMiddleware(function (Middleware $middleware) {
+     $middleware->append(EnsureTokenIsValid::class);
+})
+```
+
+- withMiddleware: Metode ini digunakan untuk menambahkan middleware ke dalam konteks tertentu, misalnya rute atau grup rute.
+- function (Middleware $middleware) { ... }: Fungsi anonim yang menerima instance Middleware.
+- $middleware->append(EnsureTokenIsValid::class);: Menambahkan EnsureTokenIsValid ke daftar middleware yang akan diproses.
 
 </details>
 
@@ -110,6 +154,16 @@ Views bertanggung jawab untuk menampilkan data yang diberikan oleh controller. D
 <summary> Blade Templates </summary>
   
 ### Blade Templates
+
+Blade adalah template engine yang disertakan dengan Laravel dan memungkinkan Anda menggunakan kode PHP dengan sintaks yang bersih dan mudah dipahami.
+
+- File Ekstensi: File Blade menggunakan ekstensi .blade.php.
+- Lokasi: File template biasanya ditempatkan dalam direktori resources/views.
+
+Anda bisa menampilkan variabel dengan sintaks kurung kurawal ganda :
+```
+Hello, {{ $name }}.
+```
 
 
 
