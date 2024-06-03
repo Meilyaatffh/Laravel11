@@ -109,7 +109,7 @@ return $next($request);
   })
   ```
   
-Kode yang Anda berikan menunjukkan bagaimana cara menambahkan middleware EnsureTokenIsValid ke dalam aplikasi Laravel menggunakan metode withMiddleware
+Kode diatas menunjukkan bagaimana cara menambahkan middleware EnsureTokenIsValid ke dalam aplikasi Laravel menggunakan metode withMiddleware
 penjelasan kode
 
 Impor Kelas Middleware
