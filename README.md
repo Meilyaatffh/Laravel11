@@ -104,10 +104,11 @@ return $next($request);
   ```
   use App\Http\Middleware\EnsureTokenIsValid;
  
-->withMiddleware(function (Middleware $middleware) {
-     $middleware->append(EnsureTokenIsValid::class);
-})
-```
+  withMiddleware(function (Middleware $middleware) {
+  $middleware->append(EnsureTokenIsValid::class);
+  })
+  ```
+  
 Kode yang Anda berikan menunjukkan bagaimana cara menambahkan middleware EnsureTokenIsValid ke dalam aplikasi Laravel menggunakan metode withMiddleware
 penjelasan kode
 
