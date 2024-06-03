@@ -166,7 +166,29 @@ Anda bisa menampilkan variabel dengan sintaks kurung kurawal ganda :
 Hello, {{ $name }}.
 ```
 
+Contoh: Menambahkan Directive Kustom untuk Format Tanggal
 
+```
+namespace App\Providers;
+
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
+{
+    public function boot()
+    {
+        Blade::directive('datetime', function ($expression) {
+            return "<?php echo ($expression)->format('m/d/Y H:i'); ?>";
+        });
+    }
+}
+```
+penjelasan :
+
+- Blade::directive('datetime', function ($expression) { ... }): Mendefinisikan direktif baru @datetime.
+- $expression: Berisi ekspresi yang dilewatkan ke direktif di dalam template Blade.
+- return "<?php echo ($expression)->format('m/d/Y H:i'); ?>";: Menentukan kode PHP yang akan dieksekusi ketika direktif digunakan. Kode ini memformat tanggal menggunakan metode format.
 
 </details>
 
@@ -196,6 +218,19 @@ php artisan migrate
 ### Query Builder
 Query Builder adalah fitur dalam Laravel yang memungkinkan Anda untuk membuat kueri SQL menggunakan sintaks PHP. Ini memberikan cara yang lebih intuitif dan terstruktur untuk berinteraksi dengan database Anda.
 
+### Mengambil Semua Baris
+
+```
+$users = DB::table('users')->get();
+```
+### Mengambil Baris Tunggal
+
+```
+$user = DB::table('users')->where('name', 'John')->first();
+```
+penjelasan :
+- where('name', 'John'): Menambahkan kondisi WHERE name = 'John' pada kueri.
+- first(): Mengambil baris pertama yang cocok dengan kondisi yang diberikan.
 
 </details>
 
