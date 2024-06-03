@@ -207,6 +207,10 @@ Perintah untuk menjalankan migrations :
 php artisan migrate
 ```
 
+![Screenshot 2024-06-03 112035](https://github.com/Meilyaatffh/Laravel11/assets/134565192/71fb9c22-fc6f-45c0-b2e2-1879ba4f1771)
+
+- Di dalam method up, kita mendefinisikan skema tabel mahasiswa. Dalam contoh ini, kita memiliki empat kolom: id, timestamps, nama, nim, dan alamat. Kolom id akan menjadi primary key secara otomatis. timestamps adalah kolom yang digunakan untuk menandai waktu pembuatan dan pembaruan data.
+- Di dalam method down, kita mendefinisikan apa yang harus dilakukan jika migrasi ini dibatalkan. Dalam kasus ini, kita hanya menghapus tabel mahasiswa menggunakan Schema::dropIfExists('mahasiswa').
 
 
 </details>
