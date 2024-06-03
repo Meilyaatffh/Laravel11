@@ -250,4 +250,22 @@ Untuk membuat model baru, dapat menggunakan perintah Artisan:
 php artisan make:model mahasiswa
 ```
 
+### Contoh Model Eloquent
+```
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class User extends Model
+{
+    protected $table = 'users';
+}
+```
+
+penjelasan :
+- namespace App\Models;: Menyatakan namespace untuk model, yang biasanya berada di direktori App\Models.
+- use Illuminate\Database\Eloquent\Model;: Mengimpor kelas Model dari Laravel.
+- class User extends Model: Mendefinisikan kelas User yang mewarisi dari kelas Model.
+- protected $table = 'users';: Menyatakan tabel yang berhubungan dengan model User. Secara default, Laravel akan menambahkan s pada nama model untuk menentukan tabel, jadi baris ini sebenarnya tidak diperlukan kecuali Anda menggunakan nama tabel yang berbeda dari konvensi Laravel.
+
 </details>
